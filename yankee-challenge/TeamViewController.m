@@ -11,6 +11,7 @@
 #import "TeamTableViewCell.h"
 #import "HttpClient.h"
 #import "Team.h"
+#import "PlayerViewController.h"
 
 static NSString *const TEAM_TABLE_VIEW_CELL = @"TeamTableViewCell";
 
@@ -18,7 +19,7 @@ static NSString *const TEAM_TABLE_VIEW_CELL = @"TeamTableViewCell";
     
     IBOutlet UITableView *tblTeams;
 //    IBOutlet UISearchBar *searchBarPlayer;
-    NSArray *searchResults;
+    NSArray *_searchResults;
 }
 
 @end
@@ -37,7 +38,7 @@ static NSString *const TEAM_TABLE_VIEW_CELL = @"TeamTableViewCell";
     
     [[HttpClient sharedClient] getTeamsWithCompletion:^(NSInteger statusCode, NSMutableArray *results, NSError *error) {
             
-        searchResults = results;
+        _searchResults = results;
         [weakHud dismissAnimated:YES];
         [tblTeams reloadData];
     }];
@@ -59,7 +60,7 @@ static NSString *const TEAM_TABLE_VIEW_CELL = @"TeamTableViewCell";
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-    return searchResults.count;
+    return _searchResults.count;
 }
 
 - (UITableViewCell*)tableView:(UITableView *)tableView
@@ -67,9 +68,30 @@ static NSString *const TEAM_TABLE_VIEW_CELL = @"TeamTableViewCell";
     
     TeamTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:TEAM_TABLE_VIEW_CELL];
     
-    Team *team = [searchResults objectAtIndex:indexPath.row];
+    Team *team = [_searchResults objectAtIndex:indexPath.row];
     [cell setupTeamCell:team];
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    Team *team = (Team *) [_searchResults objectAtIndex:indexPath.row];
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    [self performSegueWithIdentifier:PlayerViewControllerIdentifier sender:team];
+}
+
+#pragma mark - Segue
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    
+    if ([[segue identifier] isEqualToString:PlayerViewControllerIdentifier]) {
+        
+        if ([sender isKindOfClass:[Team class]]) {
+            
+            PlayerViewController *controller = segue.destinationViewController;
+            [controller setTeam:(Team*)sender];
+        }
+    }
 }
 
 @end

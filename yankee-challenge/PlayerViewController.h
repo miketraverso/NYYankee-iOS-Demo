@@ -7,9 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Team.h"
 
 @interface PlayerViewController : UIViewController
 
+- (void)setTeam:(Team*)team;
 
 @end
 

@@ -20,6 +20,7 @@ static NSString *const PLAYER_TABLE_VIEW_CELL = @"PlayerTableViewCell";
     IBOutlet UITableView *_tblPlayers;
     IBOutlet UISearchBar *_searchBarPlayer;
     NSArray *_searchResults;
+    Team *_team;
 }
 
 @end
@@ -29,8 +30,39 @@ static NSString *const PLAYER_TABLE_VIEW_CELL = @"PlayerTableViewCell";
 - (void)viewDidLoad {
     
     [super viewDidLoad];
-    self.title = @"Player Search";
     _tblPlayers.tableFooterView = [UIView new];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    
+    [super viewWillAppear:animated];
+    
+    if (_team) {
+        
+        self.title = [NSString stringWithFormat:@"%@ Roster", _team.teamName];
+
+        JGProgressHUD *HUD = [JGProgressHUD progressHUDWithStyle:JGProgressHUDStyleDark];
+        HUD.textLabel.text = @"Loading";
+        [HUD showInView:self.view];
+        __weak JGProgressHUD *weakHud = HUD;
+
+        [[HttpClient sharedClient] getTeamRosterWithTeamId:_team.teamID completion:^(NSInteger statusCode, NSMutableArray *results, NSError *error) {
+            
+            _searchResults = results;
+            [weakHud dismissAnimated:YES];
+            [_tblPlayers reloadData];
+
+        }];
+    }
+    else {
+        
+        self.title = @"Player Search";
+    }
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    
+    _team = 0;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -173,6 +205,13 @@ static NSString *const PLAYER_TABLE_VIEW_CELL = @"PlayerTableViewCell";
 - (UIColor *)backgroundColorForEmptyDataSet:(UIScrollView *)scrollView {
     
     return [UIColor whiteColor];
+}
+
+#pragma mark - Setters
+
+- (void)setTeam:(Team*)team {
+
+    _team = team;
 }
 
 @end
