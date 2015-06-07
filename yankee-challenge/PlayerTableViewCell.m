@@ -51,7 +51,6 @@
     
     [lblPosition setText:[player getPositionName]];
     [imgBackgroundPlayer setImage:[TeamLookupUtility getTeamLogo:(MLBTeamID)player.teamID]];
-    NSLog(@"%@", [player getHeight]);
 }
 
 - (void)cleanupCell {
