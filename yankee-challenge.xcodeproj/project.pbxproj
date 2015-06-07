@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		350A34AC3C09A0B585C0C043 /* libPods-yankee-challenge.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4353EA1D5D6501196BB4EF49 /* libPods-yankee-challenge.a */; };
+		B7579E9AD45C2AD6462F8746 /* libPods-yankeeUtils.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A55AA890EA9B9D5EC733947 /* libPods-yankeeUtils.a */; };
 		E987A9171B227FE2000B9E3D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E987A9161B227FE2000B9E3D /* main.m */; };
 		E987A91A1B227FE2000B9E3D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E987A9191B227FE2000B9E3D /* AppDelegate.m */; };
 		E987A91D1B227FE2000B9E3D /* yankee_challenge.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E987A91B1B227FE2000B9E3D /* yankee_challenge.xcdatamodeld */; };
@@ -14,20 +16,53 @@
 		E987A9231B227FE2000B9E3D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E987A9211B227FE2000B9E3D /* Main.storyboard */; };
 		E987A9251B227FE2000B9E3D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E987A9241B227FE2000B9E3D /* Images.xcassets */; };
 		E987A9281B227FE2000B9E3D /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = E987A9261B227FE2000B9E3D /* LaunchScreen.xib */; };
-		E987A9341B227FE2000B9E3D /* yankee_challengeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E987A9331B227FE2000B9E3D /* yankee_challengeTests.m */; };
+		E98E56CB1B22A23B00B6DEA6 /* yankee-utils.h in Headers */ = {isa = PBXBuildFile; fileRef = E98E56CA1B22A23B00B6DEA6 /* yankee-utils.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E98E56DD1B22A23B00B6DEA6 /* yankeeUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E98E56C61B22A23B00B6DEA6 /* yankeeUtils.framework */; };
+		E98E56DE1B22A23B00B6DEA6 /* yankeeUtils.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E98E56C61B22A23B00B6DEA6 /* yankeeUtils.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		E98E56E81B22A30100B6DEA6 /* HttpClient.h in Headers */ = {isa = PBXBuildFile; fileRef = E98E56E61B22A30100B6DEA6 /* HttpClient.h */; };
+		E98E56E91B22A30100B6DEA6 /* HttpClient.m in Sources */ = {isa = PBXBuildFile; fileRef = E98E56E71B22A30100B6DEA6 /* HttpClient.m */; };
+		E98E56EC1B2326D300B6DEA6 /* Team.h in Headers */ = {isa = PBXBuildFile; fileRef = E98E56EA1B2326D300B6DEA6 /* Team.h */; };
+		E98E56ED1B2326D300B6DEA6 /* Team.m in Sources */ = {isa = PBXBuildFile; fileRef = E98E56EB1B2326D300B6DEA6 /* Team.m */; };
+		E98E56F01B2326E700B6DEA6 /* Player.h in Headers */ = {isa = PBXBuildFile; fileRef = E98E56EE1B2326E700B6DEA6 /* Player.h */; };
+		E98E56F11B2326E700B6DEA6 /* Player.m in Sources */ = {isa = PBXBuildFile; fileRef = E98E56EF1B2326E700B6DEA6 /* Player.m */; };
+		E98E56F51B232A6D00B6DEA6 /* PlayerTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E98E56F41B232A6D00B6DEA6 /* PlayerTableViewCell.m */; };
+		E98E56F81B232A7F00B6DEA6 /* TeamTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E98E56F71B232A7F00B6DEA6 /* TeamTableViewCell.m */; };
+		E98E56FB1B23916600B6DEA6 /* NSString+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = E98E56FA1B23916600B6DEA6 /* NSString+Utils.m */; };
+		E98E56FF1B23D3FC00B6DEA6 /* TeamLookupUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = E98E56FE1B23D3FC00B6DEA6 /* TeamLookupUtility.m */; };
+		E98E57021B23DA8200B6DEA6 /* TeamViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E98E57011B23DA8200B6DEA6 /* TeamViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		E987A92E1B227FE2000B9E3D /* PBXContainerItemProxy */ = {
+		E98E56DB1B22A23B00B6DEA6 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = E987A9091B227FE2000B9E3D /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = E987A9101B227FE2000B9E3D;
-			remoteInfo = "yankee-challenge";
+			remoteGlobalIDString = E98E56C51B22A23B00B6DEA6;
+			remoteInfo = "yankee-utils";
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		E98E56E21B22A23B00B6DEA6 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				E98E56DE1B22A23B00B6DEA6 /* yankeeUtils.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		1A55AA890EA9B9D5EC733947 /* libPods-yankeeUtils.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-yankeeUtils.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4353EA1D5D6501196BB4EF49 /* libPods-yankee-challenge.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-yankee-challenge.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6359E21161001040FF1BE88C /* Pods-yankeeUtils.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-yankeeUtils.debug.xcconfig"; path = "Pods/Target Support Files/Pods-yankeeUtils/Pods-yankeeUtils.debug.xcconfig"; sourceTree = "<group>"; };
+		8BDCFD1AE6E21AF64C9F2EC5 /* Pods-yankee-challenge.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-yankee-challenge.debug.xcconfig"; path = "Pods/Target Support Files/Pods-yankee-challenge/Pods-yankee-challenge.debug.xcconfig"; sourceTree = "<group>"; };
+		BC324E4E9B7F8D0267DFC814 /* Pods-yankee-challenge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-yankee-challenge.release.xcconfig"; path = "Pods/Target Support Files/Pods-yankee-challenge/Pods-yankee-challenge.release.xcconfig"; sourceTree = "<group>"; };
+		E4BCE471206BE713E9845D0B /* Pods-yankeeUtils.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-yankeeUtils.release.xcconfig"; path = "Pods/Target Support Files/Pods-yankeeUtils/Pods-yankeeUtils.release.xcconfig"; sourceTree = "<group>"; };
 		E987A9111B227FE2000B9E3D /* yankee-challenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "yankee-challenge.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E987A9151B227FE2000B9E3D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E987A9161B227FE2000B9E3D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -39,9 +74,27 @@
 		E987A9221B227FE2000B9E3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E987A9241B227FE2000B9E3D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		E987A9271B227FE2000B9E3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		E987A92D1B227FE2000B9E3D /* yankee-challengeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "yankee-challengeTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		E987A9321B227FE2000B9E3D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E987A9331B227FE2000B9E3D /* yankee_challengeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = yankee_challengeTests.m; sourceTree = "<group>"; };
+		E98E56C61B22A23B00B6DEA6 /* yankeeUtils.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = yankeeUtils.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E98E56C91B22A23B00B6DEA6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E98E56CA1B22A23B00B6DEA6 /* yankee-utils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "yankee-utils.h"; sourceTree = "<group>"; };
+		E98E56E61B22A30100B6DEA6 /* HttpClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HttpClient.h; sourceTree = "<group>"; };
+		E98E56E71B22A30100B6DEA6 /* HttpClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HttpClient.m; sourceTree = "<group>"; };
+		E98E56EA1B2326D300B6DEA6 /* Team.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Team.h; sourceTree = "<group>"; };
+		E98E56EB1B2326D300B6DEA6 /* Team.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Team.m; sourceTree = "<group>"; };
+		E98E56EE1B2326E700B6DEA6 /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Player.h; sourceTree = "<group>"; };
+		E98E56EF1B2326E700B6DEA6 /* Player.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Player.m; sourceTree = "<group>"; };
+		E98E56F31B232A6D00B6DEA6 /* PlayerTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerTableViewCell.h; sourceTree = "<group>"; };
+		E98E56F41B232A6D00B6DEA6 /* PlayerTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerTableViewCell.m; sourceTree = "<group>"; };
+		E98E56F61B232A7F00B6DEA6 /* TeamTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TeamTableViewCell.h; sourceTree = "<group>"; };
+		E98E56F71B232A7F00B6DEA6 /* TeamTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TeamTableViewCell.m; sourceTree = "<group>"; };
+		E98E56F91B23916600B6DEA6 /* NSString+Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Utils.h"; sourceTree = "<group>"; };
+		E98E56FA1B23916600B6DEA6 /* NSString+Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Utils.m"; sourceTree = "<group>"; };
+		E98E56FC1B23A91200B6DEA6 /* yankeeUtils.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = yankeeUtils.pch; sourceTree = "<group>"; };
+		E98E56FD1B23D3FC00B6DEA6 /* TeamLookupUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TeamLookupUtility.h; sourceTree = "<group>"; };
+		E98E56FE1B23D3FC00B6DEA6 /* TeamLookupUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TeamLookupUtility.m; sourceTree = "<group>"; };
+		E98E57001B23DA8200B6DEA6 /* TeamViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TeamViewController.h; sourceTree = "<group>"; };
+		E98E57011B23DA8200B6DEA6 /* TeamViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TeamViewController.m; sourceTree = "<group>"; };
+		E9B34B541B2298140009C0D1 /* yankee-challenge.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "yankee-challenge.pch"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,25 +102,52 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				350A34AC3C09A0B585C0C043 /* libPods-yankee-challenge.a in Frameworks */,
+				E98E56DD1B22A23B00B6DEA6 /* yankeeUtils.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E987A92A1B227FE2000B9E3D /* Frameworks */ = {
+		E98E56C21B22A23B00B6DEA6 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B7579E9AD45C2AD6462F8746 /* libPods-yankeeUtils.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8B96B447FD2FAC376F85C965 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8BDCFD1AE6E21AF64C9F2EC5 /* Pods-yankee-challenge.debug.xcconfig */,
+				BC324E4E9B7F8D0267DFC814 /* Pods-yankee-challenge.release.xcconfig */,
+				6359E21161001040FF1BE88C /* Pods-yankeeUtils.debug.xcconfig */,
+				E4BCE471206BE713E9845D0B /* Pods-yankeeUtils.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		8EB3842A2E3D197C16A99C2B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4353EA1D5D6501196BB4EF49 /* libPods-yankee-challenge.a */,
+				1A55AA890EA9B9D5EC733947 /* libPods-yankeeUtils.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		E987A9081B227FE2000B9E3D = {
 			isa = PBXGroup;
 			children = (
+				E987A9211B227FE2000B9E3D /* Main.storyboard */,
+				E987A9261B227FE2000B9E3D /* LaunchScreen.xib */,
 				E987A9131B227FE2000B9E3D /* yankee-challenge */,
-				E987A9301B227FE2000B9E3D /* yankee-challengeTests */,
+				E98E56C71B22A23B00B6DEA6 /* yankeeUtils */,
 				E987A9121B227FE2000B9E3D /* Products */,
+				8B96B447FD2FAC376F85C965 /* Pods */,
+				8EB3842A2E3D197C16A99C2B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -75,7 +155,7 @@
 			isa = PBXGroup;
 			children = (
 				E987A9111B227FE2000B9E3D /* yankee-challenge.app */,
-				E987A92D1B227FE2000B9E3D /* yankee-challengeTests.xctest */,
+				E98E56C61B22A23B00B6DEA6 /* yankeeUtils.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -85,12 +165,8 @@
 			children = (
 				E987A9181B227FE2000B9E3D /* AppDelegate.h */,
 				E987A9191B227FE2000B9E3D /* AppDelegate.m */,
-				E987A91E1B227FE2000B9E3D /* ViewController.h */,
-				E987A91F1B227FE2000B9E3D /* ViewController.m */,
-				E987A9211B227FE2000B9E3D /* Main.storyboard */,
-				E987A9241B227FE2000B9E3D /* Images.xcassets */,
-				E987A9261B227FE2000B9E3D /* LaunchScreen.xib */,
-				E987A91B1B227FE2000B9E3D /* yankee_challenge.xcdatamodeld */,
+				E98E57041B23E22000B6DEA6 /* UIViewControllers */,
+				E98E57031B23E20C00B6DEA6 /* Custom UITableViewCells */,
 				E987A9141B227FE2000B9E3D /* Supporting Files */,
 			);
 			path = "yankee-challenge";
@@ -99,66 +175,147 @@
 		E987A9141B227FE2000B9E3D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				E987A9241B227FE2000B9E3D /* Images.xcassets */,
+				E987A91B1B227FE2000B9E3D /* yankee_challenge.xcdatamodeld */,
 				E987A9151B227FE2000B9E3D /* Info.plist */,
 				E987A9161B227FE2000B9E3D /* main.m */,
+				E9B34B541B2298140009C0D1 /* yankee-challenge.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		E987A9301B227FE2000B9E3D /* yankee-challengeTests */ = {
+		E98E56C71B22A23B00B6DEA6 /* yankeeUtils */ = {
 			isa = PBXGroup;
 			children = (
-				E987A9331B227FE2000B9E3D /* yankee_challengeTests.m */,
-				E987A9311B227FE2000B9E3D /* Supporting Files */,
+				E98E57051B23E24A00B6DEA6 /* Categories */,
+				E98E56F21B232A0700B6DEA6 /* Models */,
+				E98E57061B23E25600B6DEA6 /* Utilities */,
+				E98E56CA1B22A23B00B6DEA6 /* yankee-utils.h */,
+				E98E56C81B22A23B00B6DEA6 /* Supporting Files */,
 			);
-			path = "yankee-challengeTests";
+			name = yankeeUtils;
+			path = "yankee-utils";
 			sourceTree = "<group>";
 		};
-		E987A9311B227FE2000B9E3D /* Supporting Files */ = {
+		E98E56C81B22A23B00B6DEA6 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				E987A9321B227FE2000B9E3D /* Info.plist */,
+				E98E56C91B22A23B00B6DEA6 /* Info.plist */,
+				E98E56FC1B23A91200B6DEA6 /* yankeeUtils.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E98E56F21B232A0700B6DEA6 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E98E56EA1B2326D300B6DEA6 /* Team.h */,
+				E98E56EB1B2326D300B6DEA6 /* Team.m */,
+				E98E56EE1B2326E700B6DEA6 /* Player.h */,
+				E98E56EF1B2326E700B6DEA6 /* Player.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		E98E57031B23E20C00B6DEA6 /* Custom UITableViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				E98E56F31B232A6D00B6DEA6 /* PlayerTableViewCell.h */,
+				E98E56F41B232A6D00B6DEA6 /* PlayerTableViewCell.m */,
+				E98E56F61B232A7F00B6DEA6 /* TeamTableViewCell.h */,
+				E98E56F71B232A7F00B6DEA6 /* TeamTableViewCell.m */,
+			);
+			name = "Custom UITableViewCells";
+			sourceTree = "<group>";
+		};
+		E98E57041B23E22000B6DEA6 /* UIViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				E987A91E1B227FE2000B9E3D /* ViewController.h */,
+				E987A91F1B227FE2000B9E3D /* ViewController.m */,
+				E98E57001B23DA8200B6DEA6 /* TeamViewController.h */,
+				E98E57011B23DA8200B6DEA6 /* TeamViewController.m */,
+			);
+			name = UIViewControllers;
+			sourceTree = "<group>";
+		};
+		E98E57051B23E24A00B6DEA6 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				E98E56F91B23916600B6DEA6 /* NSString+Utils.h */,
+				E98E56FA1B23916600B6DEA6 /* NSString+Utils.m */,
+			);
+			name = Categories;
+			sourceTree = "<group>";
+		};
+		E98E57061B23E25600B6DEA6 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				E98E56E61B22A30100B6DEA6 /* HttpClient.h */,
+				E98E56E71B22A30100B6DEA6 /* HttpClient.m */,
+				E98E56FD1B23D3FC00B6DEA6 /* TeamLookupUtility.h */,
+				E98E56FE1B23D3FC00B6DEA6 /* TeamLookupUtility.m */,
+			);
+			name = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		E98E56C31B22A23B00B6DEA6 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E98E56EC1B2326D300B6DEA6 /* Team.h in Headers */,
+				E98E56CB1B22A23B00B6DEA6 /* yankee-utils.h in Headers */,
+				E98E56E81B22A30100B6DEA6 /* HttpClient.h in Headers */,
+				E98E56F01B2326E700B6DEA6 /* Player.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
 		E987A9101B227FE2000B9E3D /* yankee-challenge */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = E987A9371B227FE2000B9E3D /* Build configuration list for PBXNativeTarget "yankee-challenge" */;
 			buildPhases = (
+				CC882F7BC4C0B3C6C30D2789 /* Check Pods Manifest.lock */,
 				E987A90D1B227FE2000B9E3D /* Sources */,
 				E987A90E1B227FE2000B9E3D /* Frameworks */,
 				E987A90F1B227FE2000B9E3D /* Resources */,
+				E5678202E9F78701F31FC2A7 /* Copy Pods Resources */,
+				E98E56E21B22A23B00B6DEA6 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				E98E56DC1B22A23B00B6DEA6 /* PBXTargetDependency */,
 			);
 			name = "yankee-challenge";
 			productName = "yankee-challenge";
 			productReference = E987A9111B227FE2000B9E3D /* yankee-challenge.app */;
 			productType = "com.apple.product-type.application";
 		};
-		E987A92C1B227FE2000B9E3D /* yankee-challengeTests */ = {
+		E98E56C51B22A23B00B6DEA6 /* yankeeUtils */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E987A93A1B227FE2000B9E3D /* Build configuration list for PBXNativeTarget "yankee-challengeTests" */;
+			buildConfigurationList = E98E56DF1B22A23B00B6DEA6 /* Build configuration list for PBXNativeTarget "yankeeUtils" */;
 			buildPhases = (
-				E987A9291B227FE2000B9E3D /* Sources */,
-				E987A92A1B227FE2000B9E3D /* Frameworks */,
-				E987A92B1B227FE2000B9E3D /* Resources */,
+				678E4D52C51B061C0ACED55F /* Check Pods Manifest.lock */,
+				E98E56C11B22A23B00B6DEA6 /* Sources */,
+				E98E56C21B22A23B00B6DEA6 /* Frameworks */,
+				E98E56C31B22A23B00B6DEA6 /* Headers */,
+				E98E56C41B22A23B00B6DEA6 /* Resources */,
+				49A35D63643917BA71A59D5B /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				E987A92F1B227FE2000B9E3D /* PBXTargetDependency */,
 			);
-			name = "yankee-challengeTests";
-			productName = "yankee-challengeTests";
-			productReference = E987A92D1B227FE2000B9E3D /* yankee-challengeTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
+			name = yankeeUtils;
+			productName = "yankee-utils";
+			productReference = E98E56C61B22A23B00B6DEA6 /* yankeeUtils.framework */;
+			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
 
@@ -172,9 +329,8 @@
 					E987A9101B227FE2000B9E3D = {
 						CreatedOnToolsVersion = 6.1;
 					};
-					E987A92C1B227FE2000B9E3D = {
-						CreatedOnToolsVersion = 6.1;
-						TestTargetID = E987A9101B227FE2000B9E3D;
+					E98E56C51B22A23B00B6DEA6 = {
+						CreatedOnToolsVersion = 6.3.2;
 					};
 				};
 			};
@@ -192,7 +348,7 @@
 			projectRoot = "";
 			targets = (
 				E987A9101B227FE2000B9E3D /* yankee-challenge */,
-				E987A92C1B227FE2000B9E3D /* yankee-challengeTests */,
+				E98E56C51B22A23B00B6DEA6 /* yankeeUtils */,
 			);
 		};
 /* End PBXProject section */
@@ -208,7 +364,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E987A92B1B227FE2000B9E3D /* Resources */ = {
+		E98E56C41B22A23B00B6DEA6 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -217,33 +373,103 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		49A35D63643917BA71A59D5B /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-yankeeUtils/Pods-yankeeUtils-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		678E4D52C51B061C0ACED55F /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		CC882F7BC4C0B3C6C30D2789 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		E5678202E9F78701F31FC2A7 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-yankee-challenge/Pods-yankee-challenge-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		E987A90D1B227FE2000B9E3D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				E987A91A1B227FE2000B9E3D /* AppDelegate.m in Sources */,
+				E98E57021B23DA8200B6DEA6 /* TeamViewController.m in Sources */,
 				E987A91D1B227FE2000B9E3D /* yankee_challenge.xcdatamodeld in Sources */,
 				E987A9201B227FE2000B9E3D /* ViewController.m in Sources */,
+				E98E56FF1B23D3FC00B6DEA6 /* TeamLookupUtility.m in Sources */,
+				E98E56FB1B23916600B6DEA6 /* NSString+Utils.m in Sources */,
 				E987A9171B227FE2000B9E3D /* main.m in Sources */,
+				E98E56F81B232A7F00B6DEA6 /* TeamTableViewCell.m in Sources */,
+				E98E56F51B232A6D00B6DEA6 /* PlayerTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E987A9291B227FE2000B9E3D /* Sources */ = {
+		E98E56C11B22A23B00B6DEA6 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E987A9341B227FE2000B9E3D /* yankee_challengeTests.m in Sources */,
+				E98E56ED1B2326D300B6DEA6 /* Team.m in Sources */,
+				E98E56F11B2326E700B6DEA6 /* Player.m in Sources */,
+				E98E56E91B22A30100B6DEA6 /* HttpClient.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		E987A92F1B227FE2000B9E3D /* PBXTargetDependency */ = {
+		E98E56DC1B22A23B00B6DEA6 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = E987A9101B227FE2000B9E3D /* yankee-challenge */;
-			targetProxy = E987A92E1B227FE2000B9E3D /* PBXContainerItemProxy */;
+			target = E98E56C51B22A23B00B6DEA6 /* yankeeUtils */;
+			targetProxy = E98E56DB1B22A23B00B6DEA6 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -254,6 +480,7 @@
 				E987A9221B227FE2000B9E3D /* Base */,
 			);
 			name = Main.storyboard;
+			path = "yankee-challenge";
 			sourceTree = "<group>";
 		};
 		E987A9261B227FE2000B9E3D /* LaunchScreen.xib */ = {
@@ -262,6 +489,7 @@
 				E987A9271B227FE2000B9E3D /* Base */,
 			);
 			name = LaunchScreen.xib;
+			path = "yankee-challenge";
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -347,8 +575,10 @@
 		};
 		E987A9381B227FE2000B9E3D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8BDCFD1AE6E21AF64C9F2EC5 /* Pods-yankee-challenge.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PREFIX_HEADER = "yankee-challenge/yankee-challenge.pch";
 				INFOPLIST_FILE = "yankee-challenge/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -357,45 +587,64 @@
 		};
 		E987A9391B227FE2000B9E3D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BC324E4E9B7F8D0267DFC814 /* Pods-yankee-challenge.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PREFIX_HEADER = "yankee-challenge/yankee-challenge.pch";
 				INFOPLIST_FILE = "yankee-challenge/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
 		};
-		E987A93B1B227FE2000B9E3D /* Debug */ = {
+		E98E56E01B22A23B00B6DEA6 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6359E21161001040FF1BE88C /* Pods-yankeeUtils.debug.xcconfig */;
 			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "yankee-utils/yankeeUtils.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = "yankee-challengeTests/Info.plist";
+				INFOPLIST_FILE = "yankee-utils/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/yankee-challenge.app/yankee-challenge";
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
 		};
-		E987A93C1B227FE2000B9E3D /* Release */ = {
+		E98E56E11B22A23B00B6DEA6 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E4BCE471206BE713E9845D0B /* Pods-yankeeUtils.release.xcconfig */;
 			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = "yankee-challengeTests/Info.plist";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "yankee-utils/yankeeUtils.pch";
+				INFOPLIST_FILE = "yankee-utils/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/yankee-challenge.app/yankee-challenge";
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
 		};
@@ -418,14 +667,16 @@
 				E987A9391B227FE2000B9E3D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
-		E987A93A1B227FE2000B9E3D /* Build configuration list for PBXNativeTarget "yankee-challengeTests" */ = {
+		E98E56DF1B22A23B00B6DEA6 /* Build configuration list for PBXNativeTarget "yankeeUtils" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				E987A93B1B227FE2000B9E3D /* Debug */,
-				E987A93C1B227FE2000B9E3D /* Release */,
+				E98E56E01B22A23B00B6DEA6 /* Debug */,
+				E98E56E11B22A23B00B6DEA6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

@@ -1,6 +1,6 @@
 //
-//  yankee_challengeTests.m
-//  yankee-challengeTests
+//  yankee_utilsTests.m
+//  yankee-utilsTests
 //
 //  Created by Michael R Traverso on 6/5/15.
 //  Copyright (c) 2015 hire mike traverso, inc. All rights reserved.
@@ -9,11 +9,11 @@
 #import <UIKit/UIKit.h>
 #import <XCTest/XCTest.h>
 
-@interface yankee_challengeTests : XCTestCase
+@interface yankee_utilsTests : XCTestCase
 
 @end
 
-@implementation yankee_challengeTests
+@implementation yankee_utilsTests
 
 - (void)setUp {
     [super setUp];

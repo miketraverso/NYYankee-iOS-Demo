@@ -16,7 +16,27 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+
+    [[UITabBar appearance] setTintColor:[UIColor whiteColor]];
+    [[UITabBar appearance] setBarTintColor:YANKEE_BLUE];
+    
+    NSDictionary *navBarTextAttributes = [NSDictionary dictionaryWithObjectsAndKeys:
+                                          [UIColor blueColor], NSForegroundColorAttributeName,
+                                          //[UIFont fontWithName:@"Helvetica Neue" size:18.0f], NSFontAttributeName,
+                                          nil];
+    
+    [[UINavigationBar appearance] setBarTintColor:YANKEE_BLUE_WITH_ALPHA(.5)];
+    [[UINavigationBar appearance] setTintColor:[UIColor blueColor]];
+    [[UINavigationBar appearance] setTitleTextAttributes:navBarTextAttributes];
+    
+    NSDictionary *attributes = [NSDictionary dictionaryWithObjectsAndKeys:
+                                [UIColor whiteColor], NSForegroundColorAttributeName,nil];
+    [[UIBarButtonItem appearance] setTitleTextAttributes: attributes
+                                                forState: UIControlStateNormal];
+    
+
+    [self.window makeKeyAndVisible];
+
     return YES;
 }
 
