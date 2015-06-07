@@ -28,6 +28,7 @@ static NSString *const TEAM_TABLE_VIEW_CELL = @"TeamTableViewCell";
 - (void)viewDidLoad {
     
     [super viewDidLoad];
+    self.title = @"Teams";
     
     JGProgressHUD *HUD = [JGProgressHUD progressHUDWithStyle:JGProgressHUDStyleDark];
     HUD.textLabel.text = @"Loading";
