@@ -30,6 +30,7 @@
 		E98E56FB1B23916600B6DEA6 /* NSString+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = E98E56FA1B23916600B6DEA6 /* NSString+Utils.m */; };
 		E98E56FF1B23D3FC00B6DEA6 /* TeamLookupUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = E98E56FE1B23D3FC00B6DEA6 /* TeamLookupUtility.m */; };
 		E98E57021B23DA8200B6DEA6 /* TeamViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E98E57011B23DA8200B6DEA6 /* TeamViewController.m */; };
+		E98E57091B23E51E00B6DEA6 /* PlayerDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E98E57081B23E51E00B6DEA6 /* PlayerDetailViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -94,6 +95,8 @@
 		E98E56FE1B23D3FC00B6DEA6 /* TeamLookupUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TeamLookupUtility.m; sourceTree = "<group>"; };
 		E98E57001B23DA8200B6DEA6 /* TeamViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TeamViewController.h; sourceTree = "<group>"; };
 		E98E57011B23DA8200B6DEA6 /* TeamViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TeamViewController.m; sourceTree = "<group>"; };
+		E98E57071B23E51E00B6DEA6 /* PlayerDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerDetailViewController.h; sourceTree = "<group>"; };
+		E98E57081B23E51E00B6DEA6 /* PlayerDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerDetailViewController.m; sourceTree = "<group>"; };
 		E9B34B541B2298140009C0D1 /* yankee-challenge.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "yankee-challenge.pch"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -235,6 +238,8 @@
 				E987A91F1B227FE2000B9E3D /* PlayerViewController.m */,
 				E98E57001B23DA8200B6DEA6 /* TeamViewController.h */,
 				E98E57011B23DA8200B6DEA6 /* TeamViewController.m */,
+				E98E57071B23E51E00B6DEA6 /* PlayerDetailViewController.h */,
+				E98E57081B23E51E00B6DEA6 /* PlayerDetailViewController.m */,
 			);
 			name = UIViewControllers;
 			sourceTree = "<group>";
@@ -441,6 +446,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E98E57091B23E51E00B6DEA6 /* PlayerDetailViewController.m in Sources */,
 				E987A91A1B227FE2000B9E3D /* AppDelegate.m in Sources */,
 				E98E57021B23DA8200B6DEA6 /* TeamViewController.m in Sources */,
 				E987A91D1B227FE2000B9E3D /* yankee_challenge.xcdatamodeld in Sources */,
