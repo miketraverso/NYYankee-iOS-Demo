@@ -16,6 +16,9 @@
 
 - (void)searchPlayers:(NSString*)parameterString
            completion:(void (^)(NSInteger, NSMutableArray *, NSError *))callback;
+
 - (void)getTeamsWithCompletion:(void (^)(NSInteger, NSMutableArray *, NSError *))callback;
 
+- (void)getTeamRosterWithTeamId:(NSInteger)teamID
+                     completion:(void (^)(NSInteger, NSMutableArray *, NSError *))callback;
 @end

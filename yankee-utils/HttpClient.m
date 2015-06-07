@@ -95,6 +95,35 @@ static HttpClient* __sharedClient = nil;
     }];
 }
 
+- (void)getTeamRosterWithTeamId:(NSInteger)teamID
+                     completion:(void (^)(NSInteger, NSMutableArray *, NSError *))callback {
+    
+    NSMutableArray *results = [[NSMutableArray alloc] init];
+    
+    self.requestSerializer = [AFHTTPRequestSerializer serializer];
+    self.responseSerializer = [AFJSONResponseSerializer serializer];
+    
+    [self GET:[NSString stringWithFormat:@"team/%i/roster", teamID] parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObjects) {
+        
+        for (id responseObject in responseObjects) {
+            
+            Player *player = [Player setupPlayerWithResponse:responseObject];
+            [results addObject:player];
+        }
+        if (callback) {
+            
+            callback([operation.response statusCode], results, nil);
+        }
+    }
+      failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+          
+          if (callback) {
+              
+              callback([operation.response statusCode], results, error);
+          }
+      }];
+}
+
 - (void)getTeamsWithCompletion:(void (^)(NSInteger, NSMutableArray *, NSError *))callback {
     
     NSMutableArray *results = [[NSMutableArray alloc] init];
