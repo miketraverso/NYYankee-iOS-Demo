@@ -16,7 +16,7 @@
 		E987A9231B227FE2000B9E3D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E987A9211B227FE2000B9E3D /* Main.storyboard */; };
 		E987A9251B227FE2000B9E3D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E987A9241B227FE2000B9E3D /* Images.xcassets */; };
 		E987A9281B227FE2000B9E3D /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = E987A9261B227FE2000B9E3D /* LaunchScreen.xib */; };
-		E98E56CB1B22A23B00B6DEA6 /* yankee-utils.h in Headers */ = {isa = PBXBuildFile; fileRef = E98E56CA1B22A23B00B6DEA6 /* yankee-utils.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E98E56CB1B22A23B00B6DEA6 /* yankeeUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = E98E56CA1B22A23B00B6DEA6 /* yankeeUtils.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E98E56DD1B22A23B00B6DEA6 /* yankeeUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E98E56C61B22A23B00B6DEA6 /* yankeeUtils.framework */; };
 		E98E56DE1B22A23B00B6DEA6 /* yankeeUtils.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E98E56C61B22A23B00B6DEA6 /* yankeeUtils.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E98E56E81B22A30100B6DEA6 /* HttpClient.h in Headers */ = {isa = PBXBuildFile; fileRef = E98E56E61B22A30100B6DEA6 /* HttpClient.h */; };
@@ -77,7 +77,7 @@
 		E987A9271B227FE2000B9E3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		E98E56C61B22A23B00B6DEA6 /* yankeeUtils.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = yankeeUtils.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E98E56C91B22A23B00B6DEA6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E98E56CA1B22A23B00B6DEA6 /* yankee-utils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "yankee-utils.h"; sourceTree = "<group>"; };
+		E98E56CA1B22A23B00B6DEA6 /* yankeeUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = yankeeUtils.h; sourceTree = "<group>"; };
 		E98E56E61B22A30100B6DEA6 /* HttpClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HttpClient.h; sourceTree = "<group>"; };
 		E98E56E71B22A30100B6DEA6 /* HttpClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HttpClient.m; sourceTree = "<group>"; };
 		E98E56EA1B2326D300B6DEA6 /* Team.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Team.h; sourceTree = "<group>"; };
@@ -193,7 +193,7 @@
 				E98E57051B23E24A00B6DEA6 /* Categories */,
 				E98E56F21B232A0700B6DEA6 /* Models */,
 				E98E57061B23E25600B6DEA6 /* Utilities */,
-				E98E56CA1B22A23B00B6DEA6 /* yankee-utils.h */,
+				E98E56CA1B22A23B00B6DEA6 /* yankeeUtils.h */,
 				E98E56C81B22A23B00B6DEA6 /* Supporting Files */,
 			);
 			name = yankeeUtils;
@@ -272,7 +272,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E98E56EC1B2326D300B6DEA6 /* Team.h in Headers */,
-				E98E56CB1B22A23B00B6DEA6 /* yankee-utils.h in Headers */,
+				E98E56CB1B22A23B00B6DEA6 /* yankeeUtils.h in Headers */,
 				E98E56E81B22A30100B6DEA6 /* HttpClient.h in Headers */,
 				E98E56F01B2326E700B6DEA6 /* Player.h in Headers */,
 			);
