@@ -11,14 +11,15 @@
 #import "PlayerTableViewCell.h"
 #import "HttpClient.h"
 #import "Player.h"
+#import "PlayerDetailViewController.h"
 
 static NSString *const PLAYER_TABLE_VIEW_CELL = @"PlayerTableViewCell";
 
 @interface PlayerViewController () <UITableViewDataSource, UITableViewDelegate, DZNEmptyDataSetSource, DZNEmptyDataSetDelegate, UISearchBarDelegate> {
     
-    IBOutlet UITableView *tblPlayers;
-    IBOutlet UISearchBar *searchBarPlayer;
-    NSArray *searchResults;
+    IBOutlet UITableView *_tblPlayers;
+    IBOutlet UISearchBar *_searchBarPlayer;
+    NSArray *_searchResults;
 }
 
 @end
@@ -28,7 +29,8 @@ static NSString *const PLAYER_TABLE_VIEW_CELL = @"PlayerTableViewCell";
 - (void)viewDidLoad {
     
     [super viewDidLoad];
-    tblPlayers.tableFooterView = [UIView new];
+    self.title = @"Player Search";
+    _tblPlayers.tableFooterView = [UIView new];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -38,17 +40,17 @@ static NSString *const PLAYER_TABLE_VIEW_CELL = @"PlayerTableViewCell";
 
 - (void)dealloc {
     
-    tblPlayers.dataSource = nil;
-    tblPlayers.delegate = nil;
-    tblPlayers.emptyDataSetSource = nil;
-    tblPlayers.emptyDataSetDelegate = nil;
+    _tblPlayers.dataSource = nil;
+    _tblPlayers.delegate = nil;
+    _tblPlayers.emptyDataSetSource = nil;
+    _tblPlayers.emptyDataSetDelegate = nil;
 }
 
 #pragma mark - UITableViewDataSource & UITableViewDelegate
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-    return searchResults.count;
+    return _searchResults.count;
 }
 
 - (UITableViewCell*)tableView:(UITableView *)tableView
@@ -60,16 +62,37 @@ static NSString *const PLAYER_TABLE_VIEW_CELL = @"PlayerTableViewCell";
         
     }
     
-    Player *player = [searchResults objectAtIndex:indexPath.row];
+    Player *player = [_searchResults objectAtIndex:indexPath.row];
     [cell setupPlayerCell:player];
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    Player *player = (Player *) [_searchResults objectAtIndex:indexPath.row];
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    [self performSegueWithIdentifier:PlayerDetailViewControllerIdentifier sender:player];
+}
+
+#pragma mark - Segue
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    
+    if ([[segue identifier] isEqualToString:PlayerDetailViewControllerIdentifier]) {
+        
+        if ([sender isKindOfClass:[Player class]]) {
+            
+            PlayerDetailViewController *controller = segue.destinationViewController;
+            [controller setPlayer:(Player*)sender];
+        }
+    }
 }
 
 #pragma mark - UISearchBarDelegate 
 
 - (void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar {
     
-    if (searchBar == searchBarPlayer) {
+    if (searchBar == _searchBarPlayer) {
         
         [searchBar setShowsCancelButton:YES];
     }
@@ -77,7 +100,7 @@ static NSString *const PLAYER_TABLE_VIEW_CELL = @"PlayerTableViewCell";
 
 - (void)searchBarTextDidEndEditing:(UISearchBar *)searchBar {
     
-    if (searchBar == searchBarPlayer) {
+    if (searchBar == _searchBarPlayer) {
         
         [searchBar setShowsCancelButton:NO];
     }
@@ -97,9 +120,9 @@ static NSString *const PLAYER_TABLE_VIEW_CELL = @"PlayerTableViewCell";
     
         [[HttpClient sharedClient] searchPlayers:searchCriteria completion:^(NSInteger statusCode, NSMutableArray *results, NSError *error) {
         
-            searchResults = results;
+            _searchResults = results;
             [weakHud dismissAnimated:YES];
-            [tblPlayers reloadData];
+            [_tblPlayers reloadData];
         }];
     }
     else {
@@ -112,7 +135,7 @@ static NSString *const PLAYER_TABLE_VIEW_CELL = @"PlayerTableViewCell";
 
 - (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar {
     
-    if (searchBar == searchBarPlayer) {
+    if (searchBar == _searchBarPlayer) {
 
         [searchBar setText:@""];
         [searchBar setShowsCancelButton:NO];
