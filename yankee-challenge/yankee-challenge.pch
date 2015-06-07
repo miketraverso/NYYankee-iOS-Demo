@@ -17,4 +17,8 @@
 
     #import "JGProgressHUD.h"
 
+    static NSString *const PlayerDetailViewControllerIdentifier = @"PlayerDetailViewController";
+    static NSString *const PlayerViewControllerIdentifier = @"PlayerViewController";
+    static NSString *const TeamViewControllerIdentifier = @"TeamDetailViewController";
+
 #endif
