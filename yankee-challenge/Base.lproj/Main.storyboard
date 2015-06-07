@@ -8,9 +8,8 @@
         <!--Item-->
         <scene sceneID="ex8-Ln-4nd">
             <objects>
-                <navigationController navigationBarHidden="YES" id="N2N-ua-nT3" sceneMemberID="viewController">
+                <navigationController id="N2N-ua-nT3" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="OeV-vj-KNn"/>
-                    <nil key="simulatedTopBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Gg6-4W-aU7">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -23,10 +22,10 @@
             </objects>
             <point key="canvasLocation" x="-1028" y="2304"/>
         </scene>
-        <!--View Controller-->
+        <!--Player View Controller-->
         <scene sceneID="Fak-7l-Vy4">
             <objects>
-                <viewController id="ece-2r-qBI" customClass="ViewController" sceneMemberID="viewController">
+                <viewController id="ece-2r-qBI" customClass="PlayerViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="pPK-Hf-Yxi"/>
                         <viewControllerLayoutGuide type="bottom" id="gqy-DP-0iH"/>
@@ -35,8 +34,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="PLB-h7-4wD">
+                                <rect key="frame" x="-4" y="20" width="608" height="44"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="ece-2r-qBI" id="gq0-XS-A7o"/>
+                                </connections>
+                            </searchBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="75" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="BY8-2l-SQw">
-                                <rect key="frame" x="0.0" y="64" width="600" height="487"/>
+                                <rect key="frame" x="4" y="64" width="600" height="487"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="PlayerTableViewCell" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="PlayerTableViewCell" rowHeight="75" id="rOl-IL-3tc" customClass="PlayerTableViewCell">
@@ -103,6 +109,7 @@
                                             <outlet property="imgPlayer" destination="7wN-d4-Bpj" id="sTH-Mo-RDa"/>
                                             <outlet property="lblName" destination="fkS-I3-nCM" id="xWj-jy-Snh"/>
                                             <outlet property="lblPosition" destination="6U0-vv-jkt" id="Zc3-Ln-tEn"/>
+                                            <segue destination="UdL-wI-11r" kind="show" identifier="PlayerDetailViewController" trigger="accessoryAction" id="pDJ-jF-tWe"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -113,13 +120,6 @@
                                     <outlet property="emptyDataSetSource" destination="ece-2r-qBI" id="L8Z-UY-iDb"/>
                                 </connections>
                             </tableView>
-                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="PLB-h7-4wD">
-                                <rect key="frame" x="-4" y="20" width="608" height="44"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <outlet property="delegate" destination="ece-2r-qBI" id="gq0-XS-A7o"/>
-                                </connections>
-                            </searchBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -141,9 +141,9 @@
                     <tabBarItem key="tabBarItem" systemItem="favorites" id="1oc-Ek-HFa"/>
                     <navigationItem key="navigationItem" id="J7V-Zj-eM9"/>
                     <connections>
-                        <outlet property="searchBarPlayer" destination="PLB-h7-4wD" id="3nd-13-953"/>
-                        <outlet property="searchDisplayController" destination="GW0-Hv-r2C" id="ICt-VY-JNE"/>
-                        <outlet property="tblPlayers" destination="BY8-2l-SQw" id="6yl-Sq-gJX"/>
+                        <outlet property="_searchBarPlayer" destination="PLB-h7-4wD" id="P7i-WN-2VO"/>
+                        <outlet property="_tblPlayers" destination="BY8-2l-SQw" id="5E7-cy-QDH"/>
+                        <outlet property="searchDisplayController" destination="GW0-Hv-r2C" id="oX1-zW-65Q"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kiu-Vj-Jh6" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -156,7 +156,25 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="-1028" y="3030"/>
+            <point key="canvasLocation" x="-1028" y="3784"/>
+        </scene>
+        <!--Player Detail View Controller-->
+        <scene sceneID="dEy-UO-c3b">
+            <objects>
+                <viewController id="UdL-wI-11r" customClass="PlayerDetailViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="HT2-EX-tt0"/>
+                        <viewControllerLayoutGuide type="bottom" id="bQj-Dy-40U"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="pa3-F6-CKU">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yqn-MT-teN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1042" y="4522"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="L1u-bf-P0c">
@@ -165,7 +183,6 @@
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <navigationItem key="navigationItem" id="yxH-Ll-eoX"/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
-                    <nil key="simulatedTopBarMetrics"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="xDU-GQ-JDD">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
@@ -184,9 +201,9 @@
         <!--Navigation Controller-->
         <scene sceneID="Nf9-Xw-WAd">
             <objects>
-                <navigationController id="Fag-o4-n4e" sceneMemberID="viewController">
+                <navigationController navigationBarHidden="YES" id="Fag-o4-n4e" sceneMemberID="viewController">
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                    <nil key="simulatedTopBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="dFH-dS-P8B">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -202,9 +219,8 @@
         <!--Item-->
         <scene sceneID="xp2-kG-mOl">
             <objects>
-                <navigationController navigationBarHidden="YES" id="0de-Qs-iAi" sceneMemberID="viewController">
+                <navigationController id="0de-Qs-iAi" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="5uB-Tn-iAV"/>
-                    <nil key="simulatedTopBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="xeA-tP-IOO">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -230,7 +246,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="79" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="AsS-1h-7fe">
-                                <rect key="frame" x="0.0" y="20" width="600" height="581"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="601"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="TeamTableViewCell" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="TeamTableViewCell" rowHeight="79" id="yKm-gn-ai4" customClass="TeamTableViewCell">
@@ -283,6 +299,7 @@
                                             <outlet property="imgTeam" destination="UzX-Qz-ogS" id="YaQ-Oz-i7G"/>
                                             <outlet property="imgTeamBackground" destination="66T-Ee-w7w" id="xUp-2S-4Yx"/>
                                             <outlet property="lblTeamName" destination="sMc-fD-kBI" id="EZB-Je-KVA"/>
+                                            <segue destination="ece-2r-qBI" kind="show" trigger="accessoryAction" id="yhr-oI-RAq"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -293,7 +310,7 @@
                             </tableView>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="AsS-1h-7fe" firstAttribute="top" secondItem="uBf-kY-4MK" secondAttribute="bottom" id="1FT-Au-HYg"/>
+                            <constraint firstItem="AsS-1h-7fe" firstAttribute="top" secondItem="uBf-kY-4MK" secondAttribute="bottom" constant="-64" id="1FT-Au-HYg"/>
                             <constraint firstItem="Jds-UZ-5Do" firstAttribute="top" secondItem="AsS-1h-7fe" secondAttribute="bottom" constant="-50" id="e2o-N0-vps"/>
                             <constraint firstAttribute="trailingMargin" secondItem="AsS-1h-7fe" secondAttribute="trailing" constant="-16" id="mkR-E8-OrU"/>
                             <constraint firstItem="AsS-1h-7fe" firstAttribute="leading" secondItem="BNU-vH-Io6" secondAttribute="leadingMargin" constant="-16" id="rAt-B1-XYR"/>
@@ -317,4 +334,7 @@
         <image name="Q" width="419" height="568"/>
         <image name="player" width="45" height="67"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="yhr-oI-RAq"/>
+    </inferredMetricsTieBreakers>
 </document>
