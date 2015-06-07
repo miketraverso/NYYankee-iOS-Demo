@@ -12,7 +12,7 @@
 		E987A9171B227FE2000B9E3D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E987A9161B227FE2000B9E3D /* main.m */; };
 		E987A91A1B227FE2000B9E3D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E987A9191B227FE2000B9E3D /* AppDelegate.m */; };
 		E987A91D1B227FE2000B9E3D /* yankee_challenge.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E987A91B1B227FE2000B9E3D /* yankee_challenge.xcdatamodeld */; };
-		E987A9201B227FE2000B9E3D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E987A91F1B227FE2000B9E3D /* ViewController.m */; };
+		E987A9201B227FE2000B9E3D /* PlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E987A91F1B227FE2000B9E3D /* PlayerViewController.m */; };
 		E987A9231B227FE2000B9E3D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E987A9211B227FE2000B9E3D /* Main.storyboard */; };
 		E987A9251B227FE2000B9E3D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E987A9241B227FE2000B9E3D /* Images.xcassets */; };
 		E987A9281B227FE2000B9E3D /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = E987A9261B227FE2000B9E3D /* LaunchScreen.xib */; };
@@ -69,8 +69,8 @@
 		E987A9181B227FE2000B9E3D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		E987A9191B227FE2000B9E3D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		E987A91C1B227FE2000B9E3D /* yankee_challenge.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = yankee_challenge.xcdatamodel; sourceTree = "<group>"; };
-		E987A91E1B227FE2000B9E3D /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		E987A91F1B227FE2000B9E3D /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		E987A91E1B227FE2000B9E3D /* PlayerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PlayerViewController.h; sourceTree = "<group>"; };
+		E987A91F1B227FE2000B9E3D /* PlayerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PlayerViewController.m; sourceTree = "<group>"; };
 		E987A9221B227FE2000B9E3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E987A9241B227FE2000B9E3D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		E987A9271B227FE2000B9E3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -231,8 +231,8 @@
 		E98E57041B23E22000B6DEA6 /* UIViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				E987A91E1B227FE2000B9E3D /* ViewController.h */,
-				E987A91F1B227FE2000B9E3D /* ViewController.m */,
+				E987A91E1B227FE2000B9E3D /* PlayerViewController.h */,
+				E987A91F1B227FE2000B9E3D /* PlayerViewController.m */,
 				E98E57001B23DA8200B6DEA6 /* TeamViewController.h */,
 				E98E57011B23DA8200B6DEA6 /* TeamViewController.m */,
 			);
@@ -444,7 +444,7 @@
 				E987A91A1B227FE2000B9E3D /* AppDelegate.m in Sources */,
 				E98E57021B23DA8200B6DEA6 /* TeamViewController.m in Sources */,
 				E987A91D1B227FE2000B9E3D /* yankee_challenge.xcdatamodeld in Sources */,
-				E987A9201B227FE2000B9E3D /* ViewController.m in Sources */,
+				E987A9201B227FE2000B9E3D /* PlayerViewController.m in Sources */,
 				E98E56FF1B23D3FC00B6DEA6 /* TeamLookupUtility.m in Sources */,
 				E98E56FB1B23916600B6DEA6 /* NSString+Utils.m in Sources */,
 				E987A9171B227FE2000B9E3D /* main.m in Sources */,

@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  PlayerViewController.h
 //  yankee-challenge
 //
 //  Created by Michael R Traverso on 6/5/15.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface PlayerViewController : UIViewController
 
 
 @end

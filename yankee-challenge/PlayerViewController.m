@@ -1,12 +1,12 @@
 //
-//  ViewController.m
+//  PlayerViewController.m
 //  yankee-challenge
 //
 //  Created by Michael R Traverso on 6/5/15.
 //  Copyright (c) 2015 hire mike traverso, inc. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "PlayerViewController.h"
 #import "UIScrollView+EmptyDataSet.h"
 #import "PlayerTableViewCell.h"
 #import "HttpClient.h"
@@ -14,7 +14,7 @@
 
 static NSString *const PLAYER_TABLE_VIEW_CELL = @"PlayerTableViewCell";
 
-@interface ViewController () <UITableViewDataSource, UITableViewDelegate, DZNEmptyDataSetSource, DZNEmptyDataSetDelegate, UISearchBarDelegate> {
+@interface PlayerViewController () <UITableViewDataSource, UITableViewDelegate, DZNEmptyDataSetSource, DZNEmptyDataSetDelegate, UISearchBarDelegate> {
     
     IBOutlet UITableView *tblPlayers;
     IBOutlet UISearchBar *searchBarPlayer;
@@ -23,7 +23,7 @@ static NSString *const PLAYER_TABLE_VIEW_CELL = @"PlayerTableViewCell";
 
 @end
 
-@implementation ViewController
+@implementation PlayerViewController
 
 - (void)viewDidLoad {
     
