@@ -17,8 +17,11 @@
 
     #import "JGProgressHUD.h"
 
+    static NSString *const BaseTabBarControllerIdentifier = @"BaseTabBarController";
+    static NSString *const SplashViewControllerIdentifier = @"SplashViewController";
     static NSString *const PlayerDetailViewControllerIdentifier = @"PlayerDetailViewController";
     static NSString *const PlayerViewControllerIdentifier = @"PlayerViewController";
     static NSString *const TeamViewControllerIdentifier = @"TeamDetailViewController";
+    static NSString *const FavoritePlayerViewControllerIdentifier = @"FavoritePlayersViewController";
 
 #endif
