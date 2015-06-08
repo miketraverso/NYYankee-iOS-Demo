@@ -1,9 +1,9 @@
 # README #
 
-After pulling from this repo, open a terminal and switch to the directory you've pulled the code into.
-Then run 'pod install' to pull down the appropriate Cocoapods.
-After successful installation of Cocoapods, please open the .xcworkspace file from the directory in XCode.
-Build and enjoy!
+* After pulling from this repo, open a terminal and switch to the directory you've pulled the code into.
+* Then run 'pod install' to pull down the appropriate Cocoapods.
+* After successful installation of Cocoapods, please open the .xcworkspace file from the directory in XCode.
+* Build and enjoy!
 
 ### What is this repository for? ###
 
