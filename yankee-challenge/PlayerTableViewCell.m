@@ -50,7 +50,33 @@
     }
     
     [lblPosition setText:[player getPositionName]];
+
+    imgBackgroundPlayer.transform = CGAffineTransformMakeScale(0.0, 0.0);
+    imgBackgroundPlayer.transform = CGAffineTransformMakeScale(0.0, 0.0);
+    imgBackgroundPlayer.alpha = 0.0f;
+
+    imgPlayer.transform = CGAffineTransformMakeScale(0.0, 0.0);
+    imgPlayer.transform = CGAffineTransformMakeScale(0.0, 0.0);
+    imgPlayer.alpha = 0.0f;
+
     [imgBackgroundPlayer setImage:[TeamLookupUtility getTeamLogo:(MLBTeamID)player.teamID]];
+    
+    [UIView animateWithDuration:1.0
+                          delay:0.0f
+         usingSpringWithDamping:1.0f
+          initialSpringVelocity:3.0f
+                        options:UIViewAnimationOptionCurveEaseInOut
+                     animations:^{
+                         
+                         imgBackgroundPlayer.transform = CGAffineTransformIdentity;
+                         imgBackgroundPlayer.transform = CGAffineTransformIdentity;
+                         imgBackgroundPlayer.alpha = 1.0f;
+                         
+                         imgPlayer.transform = CGAffineTransformIdentity;
+                         imgPlayer.transform = CGAffineTransformIdentity;
+                         imgPlayer.alpha = 1.0f;
+                     }
+                     completion:0];
 }
 
 - (void)cleanupCell {
