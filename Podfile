@@ -3,9 +3,7 @@
 
 target 'yankee-challenge' do
     pod 'AFNetworking',  '~> 2.5'
-    pod 'MBProgressHUD', '~> 0.9.1'
-    pod 'ReactiveCocoa', '~> 2.5'
-    pod 'DZNEmptyDataSet'
+    pod 'DZNEmptyDataSet', '~> 1.5'
     pod 'JGProgressHUD', '~> 1.2'
 end
 

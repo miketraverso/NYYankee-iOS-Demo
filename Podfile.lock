@@ -22,27 +22,15 @@ PODS:
     - AFNetworking/NSURLSession
   - DZNEmptyDataSet (1.5.2)
   - JGProgressHUD (1.2.7)
-  - MBProgressHUD (0.9.1)
-  - ReactiveCocoa (2.5):
-    - ReactiveCocoa/UI
-  - ReactiveCocoa/Core (2.5):
-    - ReactiveCocoa/no-arc
-  - ReactiveCocoa/no-arc (2.5)
-  - ReactiveCocoa/UI (2.5):
-    - ReactiveCocoa/Core
 
 DEPENDENCIES:
   - AFNetworking (~> 2.5)
-  - DZNEmptyDataSet
+  - DZNEmptyDataSet (~> 1.5)
   - JGProgressHUD (~> 1.2)
-  - MBProgressHUD (~> 0.9.1)
-  - ReactiveCocoa (~> 2.5)
 
 SPEC CHECKSUMS:
   AFNetworking: 05edc0ac4c4c8cf57bcf4b84be5b0744b6d8e71e
   DZNEmptyDataSet: 741da409081a4bf707c949c964623a6ad1799772
   JGProgressHUD: a45c1d16adddf7e38092ce3f0d71d3955d2de2ec
-  MBProgressHUD: c47f2c166c126cf2ce36498d80f33e754d4e93ad
-  ReactiveCocoa: e2db045570aa97c695e7aa97c2bcab222ae51f4a
 
 COCOAPODS: 0.34.4
