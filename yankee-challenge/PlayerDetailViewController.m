@@ -45,7 +45,8 @@
 
     [super viewDidLoad];
     self.title = @"Player Details";
-    
+    self.navigationController.navigationBar.barStyle = UIBarStyleBlack;
+
     for (UIView *indicator in imgFieldPosIndicators) {
 
         indicator.hidden = YES;

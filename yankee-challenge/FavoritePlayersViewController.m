@@ -30,6 +30,7 @@ static NSString *const PLAYER_TABLE_VIEW_CELL = @"PlayerTableViewCell";
     [super viewDidLoad];
     _tblPlayers.tableFooterView = [UIView new];
     self.title = @"Favorites";
+    self.navigationController.navigationBar.barStyle = UIBarStyleBlack;
 }
 
 - (void)viewWillAppear:(BOOL)animated {

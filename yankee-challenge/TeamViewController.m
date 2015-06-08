@@ -29,7 +29,8 @@ static NSString *const TEAM_TABLE_VIEW_CELL = @"TeamTableViewCell";
     
     [super viewDidLoad];
     self.title = @"Teams";
-    
+    self.navigationController.navigationBar.barStyle = UIBarStyleBlack;
+
     JGProgressHUD *HUD = [JGProgressHUD progressHUDWithStyle:JGProgressHUDStyleDark];
     HUD.textLabel.text = @"Loading";
     [HUD showInView:self.view];
