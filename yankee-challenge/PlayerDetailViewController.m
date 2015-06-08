@@ -52,6 +52,9 @@
         indicator.layer.cornerRadius = indicator.bounds.size.width / 2;
         indicator.layer.masksToBounds = YES;
     }
+    
+    UIBarButtonItem *favoriteButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemOrganize target:self action:@selector(favoritePressed)];
+    self.navigationItem.rightBarButtonItem = favoriteButtonItem;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -91,7 +94,7 @@
         [lblPosition setText:[_player getPositionName]];
         [lblWeight setText:[NSString stringWithFormat:@"Weight: %@",[_player getWeight]]];
         [lblHeight setText:[NSString stringWithFormat:@"Height: %@",[_player getHeight]]];
-
+        [lblBIrthdate setText:[NSString stringWithFormat:@"Birthday: %@",[_player getBirthday]]];
         [lblHometown setText:[NSString stringWithFormat:@"Hometown: %@, %@ %@", _player.birthCity, _player.birthState, _player.birthCountry]];
         
         switch (_player.bats) {
@@ -161,9 +164,56 @@
         
         if (_player.number > 0) {
             
-            [lblJerseyNumber setText:[NSString stringWithFormat:@"%i", _player.number]];
+            [lblJerseyNumber setText:[NSString stringWithFormat:@"%li", (long)_player.number]];
         }
+        
+        UIView *indicatorToFlash = 0;
+        for (UIView *indicator in imgFieldPosIndicators) {
+            
+            if (!indicator.hidden) {
+                
+                indicatorToFlash = indicator;
+                break;
+            }
+        }
+        
+        indicatorToFlash.transform = CGAffineTransformMakeScale(0.0, 0.0);
+        indicatorToFlash.transform = CGAffineTransformMakeScale(0.0, 0.0);
+
+        [UIView animateWithDuration:1.0f
+                              delay:0.0f
+                            options:0
+                         animations:^{
+                             
+                            indicatorToFlash.transform = CGAffineTransformIdentity;
+                            indicatorToFlash.transform = CGAffineTransformIdentity;
+                         }
+                         completion:0];
     }
+}
+
+#pragma mark - Button handling
+
+- (IBAction)favoritePressed {
+    
+    NSData *favoriteData = [[NSUserDefaults standardUserDefaults] objectForKey:@"favoritePlayers"];
+    if (favoriteData == nil) {
+        
+        NSData *data = [NSKeyedArchiver archivedDataWithRootObject:[NSArray arrayWithObject:_player]];
+        [[NSUserDefaults standardUserDefaults] setObject:data forKey:@"favoritePlayers"];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+    }
+    else {
+        
+        NSArray *favoritePlayers = [NSKeyedUnarchiver unarchiveObjectWithData:favoriteData];
+        NSMutableArray *newFavorites = [NSMutableArray arrayWithArray:favoritePlayers];
+        [newFavorites addObject:_player];
+        NSData *data = [NSKeyedArchiver archivedDataWithRootObject:newFavorites];
+        [[NSUserDefaults standardUserDefaults] setObject:data forKey:@"favoritePlayers"];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+    }
+
+    [[[UIAlertView alloc] initWithTitle:@"Favorited!" message:[NSString stringWithFormat:@"%@ added to your favorite players.", _player.fullName] delegate:self cancelButtonTitle:@"OK" otherButtonTitles:0, nil] show];
 }
 
 @end
