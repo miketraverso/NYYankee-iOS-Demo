@@ -39,6 +39,7 @@ static NSString *const TEAM_TABLE_VIEW_CELL = @"TeamTableViewCell";
     [[HttpClient sharedClient] getTeamsWithCompletion:^(NSInteger statusCode, NSMutableArray *results, NSError *error) {
             
         _searchResults = results;
+        [self sortTeamResults];
         [weakHud dismissAnimated:YES];
         [tblTeams reloadData];
     }];
@@ -92,6 +93,16 @@ static NSString *const TEAM_TABLE_VIEW_CELL = @"TeamTableViewCell";
             [controller setTeam:(Team*)sender];
         }
     }
+}
+
+#pragma mark - Sorting
+
+- (void)sortTeamResults {
+    
+    NSSortDescriptor *leagueSorter = [[NSSortDescriptor alloc] initWithKey:@"leagueID" ascending:YES];
+    NSSortDescriptor *teamNameSorter = [[NSSortDescriptor alloc] initWithKey:@"fullName" ascending:YES];
+    NSArray *sortTeamDescriptors = [NSArray arrayWithObjects:leagueSorter, teamNameSorter, nil];
+    _searchResults = [_searchResults sortedArrayUsingDescriptors:sortTeamDescriptors];
 }
 
 @end
