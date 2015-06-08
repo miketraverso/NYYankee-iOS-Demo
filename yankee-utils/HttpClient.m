@@ -103,7 +103,7 @@ static HttpClient* __sharedClient = nil;
     self.requestSerializer = [AFHTTPRequestSerializer serializer];
     self.responseSerializer = [AFJSONResponseSerializer serializer];
     
-    [self GET:[NSString stringWithFormat:@"team/%i/roster", teamID] parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObjects) {
+    [self GET:[NSString stringWithFormat:@"team/%li/roster", (long)teamID] parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObjects) {
         
         for (id responseObject in responseObjects) {
             
