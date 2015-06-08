@@ -167,28 +167,7 @@
             [lblJerseyNumber setText:[NSString stringWithFormat:@"%li", (long)_player.number]];
         }
         
-        UIView *indicatorToFlash = 0;
-        for (UIView *indicator in imgFieldPosIndicators) {
-            
-            if (!indicator.hidden) {
-                
-                indicatorToFlash = indicator;
-                break;
-            }
-        }
-        
-        indicatorToFlash.transform = CGAffineTransformMakeScale(0.0, 0.0);
-        indicatorToFlash.transform = CGAffineTransformMakeScale(0.0, 0.0);
-
-        [UIView animateWithDuration:1.0f
-                              delay:0.0f
-                            options:0
-                         animations:^{
-                             
-                            indicatorToFlash.transform = CGAffineTransformIdentity;
-                            indicatorToFlash.transform = CGAffineTransformIdentity;
-                         }
-                         completion:0];
+        [self animatePlayerPosition];
     }
 }
 
@@ -214,6 +193,34 @@
     }
 
     [[[UIAlertView alloc] initWithTitle:@"Favorited!" message:[NSString stringWithFormat:@"%@ added to your favorite players.", _player.fullName] delegate:self cancelButtonTitle:@"OK" otherButtonTitles:0, nil] show];
+}
+
+#pragma mark - Animation
+
+- (void)animatePlayerPosition {
+    
+    UIView *indicatorToFlash = 0;
+    for (UIView *indicator in imgFieldPosIndicators) {
+        
+        if (!indicator.hidden) {
+            
+            indicatorToFlash = indicator;
+            break;
+        }
+    }
+    
+    indicatorToFlash.transform = CGAffineTransformMakeScale(0.0, 0.0);
+    indicatorToFlash.transform = CGAffineTransformMakeScale(0.0, 0.0);
+    
+    [UIView animateWithDuration:1.0f
+                          delay:0.0f
+                        options:0
+                     animations:^{
+                         
+                         indicatorToFlash.transform = CGAffineTransformIdentity;
+                         indicatorToFlash.transform = CGAffineTransformIdentity;
+                     }
+                     completion:0];
 }
 
 @end

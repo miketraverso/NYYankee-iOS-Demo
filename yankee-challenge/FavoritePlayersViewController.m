@@ -12,7 +12,6 @@
 #import "HttpClient.h"
 #import "Player.h"
 #import "PlayerDetailViewController.h"
-#import <ReactiveCocoa/ReactiveCocoa.h>
 
 static NSString *const PLAYER_TABLE_VIEW_CELL = @"PlayerTableViewCell";
 
@@ -38,6 +37,26 @@ static NSString *const PLAYER_TABLE_VIEW_CELL = @"PlayerTableViewCell";
     
     [super viewWillAppear:animated];
     
+    [self initializeFavorites];
+}
+
+- (void)didReceiveMemoryWarning {
+    
+    [super didReceiveMemoryWarning];
+}
+
+- (void)dealloc {
+    
+    _tblPlayers.dataSource = nil;
+    _tblPlayers.delegate = nil;
+    _tblPlayers.emptyDataSetSource = nil;
+    _tblPlayers.emptyDataSetDelegate = nil;
+}
+
+#pragma mark - Data loading 
+
+- (void)initializeFavorites {
+    
     NSData *favoriteData = [[NSUserDefaults standardUserDefaults] objectForKey:@"favoritePlayers"];
     if (favoriteData != nil) {
         
@@ -55,19 +74,6 @@ static NSString *const PLAYER_TABLE_VIEW_CELL = @"PlayerTableViewCell";
         
         [self addEditNavigationBarButton];
     }
-}
-
-- (void)didReceiveMemoryWarning {
-    
-    [super didReceiveMemoryWarning];
-}
-
-- (void)dealloc {
-    
-    _tblPlayers.dataSource = nil;
-    _tblPlayers.delegate = nil;
-    _tblPlayers.emptyDataSetSource = nil;
-    _tblPlayers.emptyDataSetDelegate = nil;
 }
 
 #pragma mark - UITableViewDataSource & UITableViewDelegate

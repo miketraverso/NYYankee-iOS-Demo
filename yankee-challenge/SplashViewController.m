@@ -24,6 +24,7 @@
 }
 
 - (void)didReceiveMemoryWarning {
+
     [super didReceiveMemoryWarning];
 }
 
@@ -31,8 +32,15 @@
     
     [super viewDidAppear:animated];
     
-    constraintImage.constant = -16;
-    [UIView animateWithDuration:5.0f
+    [self animateSplash];
+}
+
+#pragma mark - Animation
+
+- (void)animateSplash {
+    
+    constraintImage.constant = -40;
+    [UIView animateWithDuration:4.0f
                           delay:0.5f
                         options:0
                      animations:^{
@@ -40,16 +48,9 @@
                          [imgBackground layoutIfNeeded];
                          
                      } completion:^(BOOL finished) {
-    
+                         
                          [self performSegueWithIdentifier:BaseTabBarControllerIdentifier sender:nil];
-    }];
-    
-}
-
-#pragma mark - Segue
-
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    
+                     }];
 }
 
 @end

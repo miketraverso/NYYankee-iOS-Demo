@@ -15,10 +15,9 @@
 
 static NSString *const TEAM_TABLE_VIEW_CELL = @"TeamTableViewCell";
 
-@interface TeamViewController () <UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate> {
+@interface TeamViewController () <UITableViewDataSource, UITableViewDelegate> {
     
     IBOutlet UITableView *tblTeams;
-//    IBOutlet UISearchBar *searchBarPlayer;
     NSArray *_searchResults;
 }
 
