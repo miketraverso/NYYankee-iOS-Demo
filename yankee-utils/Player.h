@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface Player : NSObject
+@interface Player : NSObject <NSCoding>
 
 @property (nonatomic) NSInteger playerID;
 @property (nonatomic, strong) NSString* lastName;
@@ -36,4 +36,5 @@
 - (NSString*)getPositionName;
 - (NSString*)getHeight;
 - (NSString*)getWeight;
+- (NSString*)getBirthday;
 @end
