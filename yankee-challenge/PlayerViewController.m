@@ -21,6 +21,7 @@ static NSString *const PLAYER_TABLE_VIEW_CELL = @"PlayerTableViewCell";
     IBOutlet UISearchBar *_searchBarPlayer;
     NSArray *_searchResults;
     Team *_team;
+    BOOL _hasSearched;
 }
 
 @end
@@ -31,6 +32,7 @@ static NSString *const PLAYER_TABLE_VIEW_CELL = @"PlayerTableViewCell";
     
     [super viewDidLoad];
     _tblPlayers.tableFooterView = [UIView new];
+    _hasSearched = FALSE;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -49,6 +51,7 @@ static NSString *const PLAYER_TABLE_VIEW_CELL = @"PlayerTableViewCell";
         [[HttpClient sharedClient] getTeamRosterWithTeamId:_team.teamID completion:^(NSInteger statusCode, NSMutableArray *results, NSError *error) {
             
             _searchResults = results;
+            [self sortPlayerResults];
             [weakHud dismissAnimated:YES];
             [_tblPlayers reloadData];
 
@@ -146,20 +149,24 @@ static NSString *const PLAYER_TABLE_VIEW_CELL = @"PlayerTableViewCell";
     HUD.textLabel.text = @"Loading";
     [HUD showInView:self.view];
     __weak JGProgressHUD *weakHud = HUD;
-
+    
+    _hasSearched = TRUE;
+    
     NSString *searchCriteria = [searchBar.text stringByReplacingOccurrencesOfString:@" " withString:@"+"];
-    if (searchCriteria && ![searchCriteria isEqualToString:@""]) {
+    if (searchCriteria && ![searchCriteria isEqualToString:@"+"]) {
     
         [[HttpClient sharedClient] searchPlayers:searchCriteria completion:^(NSInteger statusCode, NSMutableArray *results, NSError *error) {
         
             _searchResults = results;
+            [self sortPlayerResults];
             [weakHud dismissAnimated:YES];
             [_tblPlayers reloadData];
         }];
     }
     else {
         
-        // Invalid input
+        [weakHud dismissAnimated:YES];
+        [[[UIAlertView alloc] initWithTitle:@"Oops!" message:@"Sorry, you tapped search a little too fast. Please try again." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:0, nil] show];
     }
     
     [searchBar resignFirstResponder];
@@ -178,9 +185,16 @@ static NSString *const PLAYER_TABLE_VIEW_CELL = @"PlayerTableViewCell";
 
 #pragma mark - DZNEmptyDataSetDelegate
 
+- (UIImage *)imageForEmptyDataSet:(UIScrollView *)scrollView {
+    
+    return _hasSearched ? [UIImage imageNamed:@"search"] : [UIImage imageNamed:@"hand_up"];
+}
+
 - (NSAttributedString *)titleForEmptyDataSet:(UIScrollView *)scrollView {
     
-    NSString *text = @"Please use the search box above.";
+    NSString *text = _hasSearched ? @"Sorry, but we couldn't find any matches for your search."
+                                  : @"Please use the search box above.";
+    
     NSDictionary *attributes = @{ NSFontAttributeName: [UIFont boldSystemFontOfSize:20.0],
                                   NSForegroundColorAttributeName: [UIColor darkGrayColor] };
     
@@ -214,4 +228,13 @@ static NSString *const PLAYER_TABLE_VIEW_CELL = @"PlayerTableViewCell";
     _team = team;
 }
 
+#pragma mark - Sorting
+
+- (void)sortPlayerResults {
+    
+    NSSortDescriptor *lastNameSorter = [[NSSortDescriptor alloc] initWithKey:@"lastName" ascending:YES];
+    NSSortDescriptor *firstNameSorter = [[NSSortDescriptor alloc] initWithKey:@"firstName" ascending:YES];
+    NSArray *sortPlayerDescriptors = [NSArray arrayWithObjects:lastNameSorter, firstNameSorter, nil];
+    _searchResults = [_searchResults sortedArrayUsingDescriptors:sortPlayerDescriptors];
+}
 @end
