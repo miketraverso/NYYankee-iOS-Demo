@@ -28,14 +28,22 @@ static NSString *const PLAYER_TABLE_VIEW_CELL = @"PlayerTableViewCell";
 - (void)viewDidLoad {
     
     [super viewDidLoad];
-    self.title = @"Favorites";
-
     _tblPlayers.tableFooterView = [UIView new];
+    self.title = @"Favorites";
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     
     [super viewWillAppear:animated];
+    
+    // NOTE: For some reason there seams to be a bug with DZNEmptyDataSet whereby it prevents
+    // proper autolayout of the table from happening. Setting up the frame, contentOffset
+    // and contentSize manually seems to help. I think this is a worthwhile trade-off as empty
+    // collection views aren't very user friendly.
+    
+    [_tblPlayers setFrame:self.view.frame];
+    [_tblPlayers setContentOffset:CGPointMake(0, 0)];
+    [_tblPlayers setContentSize:CGSizeMake(self.view.bounds.size.width, self.view.bounds.size.height)];
     
     [self initializeFavorites];
 }
@@ -58,6 +66,7 @@ static NSString *const PLAYER_TABLE_VIEW_CELL = @"PlayerTableViewCell";
 - (void)initializeFavorites {
     
     NSData *favoriteData = [[NSUserDefaults standardUserDefaults] objectForKey:@"favoritePlayers"];
+    
     if (favoriteData != nil) {
         
         _favoritePlayers = [NSMutableArray arrayWithArray:[NSKeyedUnarchiver unarchiveObjectWithData:favoriteData]];
@@ -147,7 +156,7 @@ static NSString *const PLAYER_TABLE_VIEW_CELL = @"PlayerTableViewCell";
 }
 
 - (NSAttributedString *)titleForEmptyDataSet:(UIScrollView *)scrollView {
-    
+        
     NSString *text = @"Sorry, but you don't have any favorites.";
     
     NSDictionary *attributes = @{ NSFontAttributeName: [UIFont boldSystemFontOfSize:20.0],
