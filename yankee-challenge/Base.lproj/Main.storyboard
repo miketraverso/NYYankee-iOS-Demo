@@ -10,6 +10,7 @@
             <objects>
                 <navigationController id="N2N-ua-nT3" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="OeV-vj-KNn"/>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Gg6-4W-aU7">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -445,15 +446,15 @@
                                 <rect key="frame" x="-84" y="0.0" width="684" height="600"/>
                             </imageView>
                             <view alpha="0.44999999999999962" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3nh-e8-rAU">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <rect key="frame" x="-4" y="0.0" width="608" height="600"/>
                                 <color key="backgroundColor" red="0.10980392160000001" green="0.15686274510000001" blue="0.25490196079999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="3nh-e8-rAU" firstAttribute="leading" secondItem="wNq-09-O7G" secondAttribute="leadingMargin" constant="-16" id="77a-AO-UwR"/>
+                            <constraint firstItem="3nh-e8-rAU" firstAttribute="leading" secondItem="wNq-09-O7G" secondAttribute="leadingMargin" constant="-20" id="77a-AO-UwR"/>
                             <constraint firstAttribute="trailingMargin" secondItem="GaO-VS-11o" secondAttribute="trailing" constant="-16" id="7pQ-dj-h53"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="3nh-e8-rAU" secondAttribute="trailing" constant="-16" id="7rX-TV-fEu"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="3nh-e8-rAU" secondAttribute="trailing" constant="-20" id="7rX-TV-fEu"/>
                             <constraint firstItem="wnx-2p-lj8" firstAttribute="top" secondItem="GaO-VS-11o" secondAttribute="bottom" id="BQt-uk-MLL"/>
                             <constraint firstItem="3nh-e8-rAU" firstAttribute="top" secondItem="b9P-2m-Uz9" secondAttribute="bottom" constant="-20" id="DbQ-Ed-DGP"/>
                             <constraint firstItem="GaO-VS-11o" firstAttribute="top" secondItem="b9P-2m-Uz9" secondAttribute="bottom" constant="-20" id="Iup-vw-njm"/>
@@ -495,6 +496,7 @@
             <objects>
                 <navigationController id="0de-Qs-iAi" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="5uB-Tn-iAV"/>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="xeA-tP-IOO">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -512,6 +514,7 @@
             <objects>
                 <navigationController id="ysu-Ck-m7H" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="8vs-I6-wVD"/>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="BUO-G8-Rv6">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -688,9 +691,9 @@
                                                 <mask key="constraints">
                                                     <exclude reference="ez6-zl-dN8"/>
                                                     <exclude reference="MhM-tc-D4H"/>
-                                                    <exclude reference="9sw-pQ-wrE"/>
-                                                    <exclude reference="3fp-wz-yBa"/>
                                                     <exclude reference="2MP-1c-mbp"/>
+                                                    <exclude reference="3fp-wz-yBa"/>
+                                                    <exclude reference="9sw-pQ-wrE"/>
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
@@ -756,7 +759,7 @@
         <image name="yankee_stadium" width="2338" height="1473"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="fzU-MR-knb"/>
         <segue reference="yhr-oI-RAq"/>
+        <segue reference="fzU-MR-knb"/>
     </inferredMetricsTieBreakers>
 </document>
